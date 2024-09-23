@@ -47,11 +47,11 @@ public class MenuSceneController : MonoBehaviour
 
     private void OnClickShopButton()
     {
-        shopPopup.gameObject.SetActive(true);
+        shopPopup.gameObject.SetActive(false);
     }
 
     private void OnClickLevelSelectButton()
     {
-        levelPopup.gameObject.SetActive(true);
+        levelPopup.gameObject.SetActive(false);
     }
 }
