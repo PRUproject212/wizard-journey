@@ -131,10 +131,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void ProcessInput()
-    {
-
-    }
 
     void ProcessMove()
     {
@@ -151,10 +147,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
 
     private void Flip()
     {
