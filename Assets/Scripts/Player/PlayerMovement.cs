@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float speedMove;
     public float speedMoveWhenJump;
-    public float speedClimb;
     //-------------------------------------
     private float playerDirection = 0f;
     [System.NonSerialized] public Rigidbody2D rd;
@@ -49,11 +48,7 @@ public class PlayerMovement : MonoBehaviour
         playerDirection = direction;
     }
 
-    public void Climbing(float direction)
-    {
-        rd.gravityScale = 0f;
-        rd.velocity = new Vector2(rd.velocity.x, speedClimb * direction);
-    }
+
 
     public void ResetGravity()
     {

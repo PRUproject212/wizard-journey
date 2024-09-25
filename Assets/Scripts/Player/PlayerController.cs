@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     int countJump = 0;
     bool isClimbing = false;
 
-    bool firstLadder;
-    bool isLadder = false;
 
     bool firstDie;
 
@@ -58,13 +56,9 @@ public class PlayerController : MonoBehaviour
         CheckOnLanding();
         if (isDashing) return;
         if (firstDie) return;
-        #if UNITY_ANDROID
-                horizontalMove = InputController.Instance.horizontalMove;
-                verticalMove = InputController.Instance.horizontalMove;
-        #else
+
         horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
-        #endif
 
         if (horizontalMove == 0)
         {
@@ -94,21 +88,8 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsJumping", false);
         }
-        else if (!m_Grounded && !isLadder)
-        {
-            animator.SetBool("IsJumping", true);
-        }
 
-        if (isLadder && firstLadder)
-        {
-            animator.SetTrigger("Climb");
-            firstLadder = false;
-        }
-        else if (isClimbing && !isLadder)
-        {
-            isClimbing = false;
-            animator.SetTrigger("TakeOf");
-        }
+
 
         if (horizontalMove > 0 && !m_FacingRight)
         {
@@ -137,14 +118,9 @@ public class PlayerController : MonoBehaviour
         if (firstDie) return;
         if (isDashing) return;
         playerMovement.Moving(horizontalMove, m_Grounded);
-        if (isLadder)
-        {
-            playerMovement.Climbing(verticalMove);
-        }
-        else
-        {
-            playerMovement.ResetGravity();
-        }
+
+        playerMovement.ResetGravity();
+
     }
 
 
@@ -158,14 +134,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Ladder")
-        {
-            isLadder = true;
-            isClimbing = true;
-            firstLadder = true;
-            m_Grounded = true;
-            countJump = 0;
-        }
 
         if (other.tag == "Endpoint")
         {
@@ -174,15 +142,6 @@ public class PlayerController : MonoBehaviour
         countJump = 0;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Ladder")
-        {
-            isLadder = false;
-            m_Grounded = false;
-            countJump = 0;
-        }
-    }
 
     public void CheckOnLanding()
     {
