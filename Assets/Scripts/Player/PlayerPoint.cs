@@ -26,6 +26,7 @@ public class PlayerPoint : MonoBehaviour
             ItemController.Instance.AddItem(other.GetComponent<Item>().id);
             ItemController.Instance.FillItemToInventory();
             Destroy(other.gameObject);
+            AudioManager.Instance.PlaySfx("collect");
         }
         else if(other.tag =="Trigger1" && TutorialSceneController.Instance.index == 0)
         {
@@ -54,12 +55,14 @@ public class PlayerPoint : MonoBehaviour
         else if (other.tag == "Gate")
         {
             Destroy(other.gameObject);
+            AudioManager.Instance.PlaySfx("kill");
         }
         else if (other.tag == "Coin")
         {
             Destroy(other.gameObject);
             GameManager.Instance.coin += 50;
             coinText.text = GameManager.Instance.coin.ToString();
+            AudioManager.Instance.PlaySfx("collect");
         }
     }
 }

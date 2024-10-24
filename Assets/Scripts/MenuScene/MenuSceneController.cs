@@ -11,6 +11,7 @@ public class MenuSceneController : MonoBehaviour
     public Button PlayButton;
     public Button CreditButton;
     public Button ExitButton;
+    public Button ShopButton;
     public Button LevelSelectButton;
 
     [Header("Pop up")]
@@ -22,6 +23,7 @@ public class MenuSceneController : MonoBehaviour
         PlayButton.onClick.AddListener(OnClickPlayButton);
         CreditButton.onClick.AddListener(OnClickCreditButton);    
         ExitButton.onClick.AddListener(OnClickExitButton);
+        ShopButton.onClick.AddListener(OnClickShopButton);
         LevelSelectButton.onClick.AddListener(OnClickLevelSelectButton);
     }
 
@@ -47,11 +49,11 @@ public class MenuSceneController : MonoBehaviour
 
     private void OnClickShopButton()
     {
-        shopPopup.gameObject.SetActive(false);
+        shopPopup.gameObject.SetActive(true);
     }
 
     private void OnClickLevelSelectButton()
     {
-        levelPopup.gameObject.SetActive(false);
+        levelPopup.gameObject.SetActive(true);
     }
 }

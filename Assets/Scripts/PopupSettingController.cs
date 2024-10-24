@@ -10,6 +10,8 @@ public class PopupSettingController : MonoBehaviour
 
     void Start()
     {
+        sliderMusic.value = AudioManager.Instance.currentVolumeMusic;
+        sliderSound.value = AudioManager.Instance.currentVolumeSound;
     }
 
     // Update is called once per frame

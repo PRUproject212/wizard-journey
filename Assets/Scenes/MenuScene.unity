@@ -3292,6 +3292,7 @@ MonoBehaviour:
   PlayButton: {fileID: 1985455414}
   CreditButton: {fileID: 435003079}
   ExitButton: {fileID: 291626263}
+  ShopButton: {fileID: 646313539}
   LevelSelectButton: {fileID: 987573284}
   CreditPopUp: {fileID: 1042312794}
   shopPopup: {fileID: 581127652}
@@ -3533,8 +3534,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Thai Dinh Chinh - DE170147\nHuynh Ngoc Bao Khanh - DE170163\nPhung Vu
-    An Quan - DE170262\t\n"
+  m_text: 'Tran Le Quoc - 21125093
+
+    Nguyen Trong Nghia - 21125154
+
+    Bui Nguyen
+    Hoang - 21125161
+
+    Do The Phuc - 21125166'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
   m_sharedMaterial: {fileID: -3736161958050485770, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
@@ -4900,7 +4907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '  PRU212 - Fall2024'
+  m_text: ' Midterm Project '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
   m_sharedMaterial: {fileID: -3736161958050485770, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
@@ -5129,6 +5136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReturnButton: {fileID: 1067979913}
   Level1Button: {fileID: 1328292127}
+  Level2Button: {fileID: 519333794}
 --- !u!4 &1284557902
 Transform:
   m_ObjectHideFlags: 0
@@ -6090,7 +6098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Wizard journey
+  m_text: TheConqueror
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
   m_sharedMaterial: {fileID: -3736161958050485770, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
@@ -6117,8 +6125,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6332,6 +6340,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f310d5ec6ada10b4ab5908ca23a9a843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentVolumeMusic: 1
+  currentVolumeSound: 1
+  sfx:
+  - {fileID: 8300000, guid: e525bd68f245be14f87a1a828c6261f1, type: 3}
+  - {fileID: 8300000, guid: 7950addf78ce8704c808c7a9dda3150f, type: 3}
+  - {fileID: 8300000, guid: 1bde161d18a3baa4293396cc4726c6a9, type: 3}
+  - {fileID: 8300000, guid: e1eec631f3a21f04ea9a5abb76649b34, type: 3}
+  - {fileID: 8300000, guid: d0643b306dc2b6846bd9d9b4478043fc, type: 3}
+  pickAudioSource: {fileID: 1482769942}
+  actionAudioSource: {fileID: 1482769943}
 --- !u!4 &1482769939
 Transform:
   m_ObjectHideFlags: 0
@@ -7118,6 +7136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5d36c4dd70e410fbe67e8e35f68a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinText: {fileID: 1130597692}
 --- !u!114 &1607844796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7130,6 +7149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6541908af544ca5a376cf3c4150879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buyFastButton: {fileID: 1209916053}
+  buyHeartButton: {fileID: 930476575}
+  buyFailPopup: {fileID: 1622372285}
+  buySuccessPopup: {fileID: 189407152}
 --- !u!4 &1607844797
 Transform:
   m_ObjectHideFlags: 0

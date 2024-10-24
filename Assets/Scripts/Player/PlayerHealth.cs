@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            AudioManager.Instance.PlaySfx("kill");
             Destroy(other.gameObject);
         }
         else if (other.gameObject.tag == "Obstacle")
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
             GameManager.Instance.DecreaseHealth();
             GetComponent<PlayerController>().UpdateAnimation();
             TutorialSceneController.Instance?.TutorialText.gameObject.SetActive(false);
+            AudioManager.Instance.PlaySfx("die");
             isDie = true;
 
             StartCoroutine(deplay());
@@ -44,11 +46,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            AudioManager.Instance.PlaySfx("kill");
             Destroy(other.gameObject.transform.parent.gameObject);
         }
         else if (other.gameObject.tag == "ChainSaw")
         {
             GameManager.Instance.DecreaseHealth();
+            AudioManager.Instance.PlaySfx("die");
             GetComponent<PlayerController>().UpdateAnimation();
             isDie = true;
 

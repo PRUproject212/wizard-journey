@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speedMove;
     public float speedMoveWhenJump;
+    public float speedClimb;
     //-------------------------------------
     private float playerDirection = 0f;
     [System.NonSerialized] public Rigidbody2D rd;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGround) rd.velocity += new Vector2(playerDirection * m_AddVelocity_x, 0f);
         rd.velocity = new Vector2(rd.velocity.x, rd.velocity.y > 0 ? (rd.velocity.y * 0.7f) : 0f);
         rd.velocity += new Vector2(0f, m_AddVelocity_y * (isGround ? 1f : 0.8f));
+        AudioManager.Instance.PlaySfx("jump");
     }
 
     public void Moving(float direction, bool isGround)
@@ -48,7 +50,11 @@ public class PlayerMovement : MonoBehaviour
         playerDirection = direction;
     }
 
-
+    public void Climbing(float direction)
+    {
+        rd.gravityScale = 0f;
+        rd.velocity = new Vector2(rd.velocity.x, speedClimb * direction);
+    }
 
     public void ResetGravity()
     {

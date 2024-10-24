@@ -28,6 +28,7 @@ public class UILevel1Controller : MonoBehaviour
 
     [Header("Button")]
     public Button PauseButton;
+    public Button Level2Button;
     public Button RetryButton;
     public Button MenuButton;
 
@@ -45,6 +46,10 @@ public class UILevel1Controller : MonoBehaviour
             PausePopup.SetActive(true);
         });
 
+        Level2Button.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(Scenes.Level2.ToString());
+        });
 
         RetryButton.onClick.AddListener(() =>
         {

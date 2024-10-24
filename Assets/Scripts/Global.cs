@@ -6,5 +6,6 @@ public enum Scenes{
     MenuScene,
     Level1,
     ShopScene,
+    Level2,
     SelectScene
 }
