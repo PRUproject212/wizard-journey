@@ -23,6 +23,9 @@ Sprite 4
 		This sprite is for enemy 3, chainsaw. This enemy cannot be destroyed.
 Sprite 5
 
+		
+
+
 		These sprites are used to create map layers using TileMap
 Sprite 6
 
@@ -62,6 +65,43 @@ Different Scenes:
 - One main scene is for gameplay, and one is for the Game Over screen.
 
 - Multiple scenes can be added for different levels.
+
+Game Sound
+- Add background sound to the main game and actions that affect the interface such as clicking, dragging, …
+
+
+- Add sounds for actions like Jump, dash, collect coin,  landing and dying for the main character. 
+
+
+
+
+
+
+
+Character Upgrade:
+- Players can collect bonuses to upgrade their characters by purchasing items that add extra lives or energy tanks.
+
+
+
+
+
+Different Scenes:
+- One main scene is for gameplay, and one is for the Game Over screen.
+
+- Multiple scenes can be added for different levels.
+
+
+
+
+
+
+Differential Level Change:
+- The number of items and enemies will increase, move faster and become harder to see as the game continues.
+
+
+- Change the rate of enemy surprise appearances.
+
+
 
 
 Differential Level Change: Developing feature
