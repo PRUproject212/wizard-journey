@@ -1334,7 +1334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &284275540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3534,14 +3534,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tran Le Quoc - 21125093
+  m_text: 'Thai Dinh Chinh - DE170147
 
-    Nguyen Trong Nghia - 21125154
+    Huynh Ngoc Bao Khanh - DE170163
 
-    Bui Nguyen
-    Hoang - 21125161
-
-    Do The Phuc - 21125166'
+    Phung
+    Vu An Quan - DE170262'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
   m_sharedMaterial: {fileID: -3736161958050485770, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
@@ -4907,7 +4905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' Midterm Project '
+  m_text: PRU212 - Fall24
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}
   m_sharedMaterial: {fileID: -3736161958050485770, guid: 15d06045a49e1b645915693f4cde9f5d, type: 2}

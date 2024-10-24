@@ -29,7 +29,7 @@ public class MenuSceneController : MonoBehaviour
 
     private void OnClickPlayButton()
     {
-        SceneManager.LoadScene(Scenes.Level1.ToString());
+        SceneManager.LoadScene(Scenes.Level1.ToString()); // switch sceen 1
     }
 
     private void OnClickCreditButton()
@@ -49,11 +49,11 @@ public class MenuSceneController : MonoBehaviour
 
     private void OnClickShopButton()
     {
-        shopPopup.gameObject.SetActive(true);
+        shopPopup.gameObject.SetActive(true); //
     }
 
     private void OnClickLevelSelectButton()
     {
-        levelPopup.gameObject.SetActive(true);
+        levelPopup.gameObject.SetActive(true); // 
     }
 }
