@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     public void IncreaseHealth() => health = Mathf.Min(health + 1, 3);
     public void DecreaseHealth() => health = Mathf.Max(health - 1, 0);
 
-    public void buyShop(int signal)
+    public void buyShop(int signal) // In game screen
     {
         if(signal == 1)
         {
@@ -47,7 +47,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void buyShopPopup(int signal)
+    public void buyShopPopup(int signal) // Main Screen
     {
         if (signal == 1)
         {
