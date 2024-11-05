@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -32,6 +31,11 @@ public class PlayerController : MonoBehaviour
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;
 
+    [Header("Teleport")]
+    public float teleportDistance = 5f; 
+    public float teleportCooldown = 3f; 
+    bool canTeleport = true;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -58,13 +62,14 @@ public class PlayerController : MonoBehaviour
         CheckOnLanding();
         if (isDashing) return;
         if (firstDie) return;
-        #if UNITY_ANDROID
+
+#if UNITY_ANDROID
                 horizontalMove = InputController.Instance.horizontalMove;
                 verticalMove = InputController.Instance.horizontalMove;
-        #else
+#else
         horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
-        #endif
+#endif
 
         if (horizontalMove == 0)
         {
@@ -89,6 +94,11 @@ public class PlayerController : MonoBehaviour
         {
             AudioManager.Instance.PlaySfx("dash");
             StartCoroutine(Dash());
+        }
+
+        if (Input.GetKeyDown(KeyCode.T) && canTeleport)
+        {
+            StartCoroutine(Teleport());
         }
 
         if (m_Grounded == true)
@@ -223,10 +233,23 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    IEnumerator Teleport()
+    {
+        canTeleport = false;
+        Vector3 targetPosition = transform.position + transform.right * (m_FacingRight ? teleportDistance : -teleportDistance);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * (m_FacingRight ? 1 : -1), teleportDistance, m_WhatIsGround);
+
+        if (hit.collider == null)
+        {
+            transform.position = targetPosition;
+        }
+        yield return new WaitForSeconds(teleportCooldown);
+        canTeleport = true;
+    }
+
     IEnumerator CancelAnimationEffectJump()
     {
         yield return new WaitForSeconds(0.35f);
         GetComponent<PlayerHealth>().EffectJump.SetActive(false);
     }
-
 }
