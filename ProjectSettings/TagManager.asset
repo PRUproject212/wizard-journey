@@ -19,6 +19,8 @@ TagManager:
   - Trigger5
   - Gate
   - Coin
+  - Trigger6
+  - MiniWizard
   layers:
   - Default
   - TransparentFX
