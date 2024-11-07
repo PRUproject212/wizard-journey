@@ -44,21 +44,25 @@ public class UILevel1Controller : MonoBehaviour
         PauseButton.onClick.AddListener(() =>
         {
             PausePopup.SetActive(true);
+            Time.timeScale = 0f; // Stop time when paused
         });
 
         Level2Button.onClick.AddListener(() =>
         {
+            Time.timeScale = 1f; // Resume time before loading the next level
             SceneManager.LoadScene(Scenes.Level2.ToString());
         });
 
         RetryButton.onClick.AddListener(() =>
         {
+            Time.timeScale = 1f; // Resume time before retrying
             GameManager.Instance.ResetHealth();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });
 
         MenuButton.onClick.AddListener(() =>
         {
+            Time.timeScale = 1f; // Resume time before going to the menu
             SceneManager.LoadScene(Scenes.MenuScene.ToString());
         });
 
@@ -83,10 +87,12 @@ public class UILevel1Controller : MonoBehaviour
         SceneManager.LoadScene(Scenes.MenuScene.ToString());
     }
 
-    public void OnClickCancelPopupButton(){
+    public void OnClickCancelPopupButton()
+    {
         PausePopup.SetActive(false);
         LevelCompletePopup.SetActive(false);
         GameOverPopup.SetActive(false);
+        Time.timeScale = 1f; // Resume time when the pause popup is closed
     }
 
     public void OnClickSoundButton(){
