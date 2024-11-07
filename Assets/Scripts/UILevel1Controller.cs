@@ -31,6 +31,7 @@ public class UILevel1Controller : MonoBehaviour
     public Button Level2Button;
     public Button RetryButton;
     public Button MenuButton;
+    public Button CancelButton;
 
     [Header("Popup")]
     public GameObject GameOverPopup;
@@ -43,26 +44,35 @@ public class UILevel1Controller : MonoBehaviour
     private void Start() {
         PauseButton.onClick.AddListener(() =>
         {
+            Debug.Log("pausing");
             PausePopup.SetActive(true);
-            Time.timeScale = 0f; // Stop time when paused
+            Time.timeScale = 0f;
+        });
+
+        CancelButton.onClick.AddListener(() =>
+        {
+            Debug.Log("resuming");
+
+            PausePopup.SetActive(false);
+            Time.timeScale = 1f;
         });
 
         Level2Button.onClick.AddListener(() =>
         {
-            Time.timeScale = 1f; // Resume time before loading the next level
             SceneManager.LoadScene(Scenes.Level2.ToString());
+            Time.timeScale = 1f;
         });
 
         RetryButton.onClick.AddListener(() =>
         {
-            Time.timeScale = 1f; // Resume time before retrying
+            Time.timeScale = 1f;
             GameManager.Instance.ResetHealth();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });
 
         MenuButton.onClick.AddListener(() =>
         {
-            Time.timeScale = 1f; // Resume time before going to the menu
+            Time.timeScale = 1f;
             SceneManager.LoadScene(Scenes.MenuScene.ToString());
         });
 
@@ -78,21 +88,24 @@ public class UILevel1Controller : MonoBehaviour
     }
 
     public void OnClickRestartButton(){
+        Time.timeScale = 1f;
         GameManager.Instance.ResetHealth();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void OnClickMenuButton(){
+        Time.timeScale = 1f;
         GameManager.Instance.ResetHealth();
         SceneManager.LoadScene(Scenes.MenuScene.ToString());
     }
 
     public void OnClickCancelPopupButton()
     {
+
         PausePopup.SetActive(false);
         LevelCompletePopup.SetActive(false);
         GameOverPopup.SetActive(false);
-        Time.timeScale = 1f; // Resume time when the pause popup is closed
+        Time.timeScale = 1f;
     }
 
     public void OnClickSoundButton(){
