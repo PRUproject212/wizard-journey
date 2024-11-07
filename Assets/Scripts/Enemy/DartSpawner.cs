@@ -5,8 +5,8 @@ public class DartSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject dartPrefab;
     [SerializeField] private Transform spawnPoint;
-    [SerializeField] private float spawnInterval = 0.5f;
-    [SerializeField] private float dartSpeed = 5f;
+    [SerializeField] private float spawnInterval = 2f;
+    [SerializeField] private float dartSpeed = 6f;
 
     private void Start()
     {
