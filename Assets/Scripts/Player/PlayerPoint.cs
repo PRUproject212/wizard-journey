@@ -83,6 +83,7 @@ public class PlayerPoint : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameManager.Instance.coin += 50 * coinMultiplier;
+            GameManager.Instance.SaveGameData();
             coinText.text = GameManager.Instance.coin.ToString();
             AudioManager.Instance.PlaySfx("collect");
         }
