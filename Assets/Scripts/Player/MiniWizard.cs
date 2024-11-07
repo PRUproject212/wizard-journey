@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class MiniWizard : MonoBehaviour
 {
-    public Transform player; 
+    public Transform player;
     public float followSpeed = 3f;
-    public float followDistance = 1f; 
+    public float followDistance = 2f;
+
+    void Start()
+    {
+        Destroy(gameObject, 20f); 
+    }
 
     void Update()
     {
