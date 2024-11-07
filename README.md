@@ -1,146 +1,104 @@
-Course Project: The Wizard Journey
-Members
-We are: 
-Thai Dinh Chinh - DE170147
-Huynh Ngoc Bao Khanh - DE170163
-Phung Vu An Quan - DE170262
+# Course Project: The Wizard Journey
 
-Story
-The Wizard Journey follows the adventure of a wizard travelling through a mystical forest. The player's goal is to help the wizard collect magical items scattered throughout the forest. These items are crucial for unlocking access to new areas and progressing to the next levels. Along the way, the wizard must overcome various challenges and obstacles. The game emphasizes exploration and strategic collection of items to complete the journey.
+## Members
+We are:
+- **Thai Dinh Chinh** - DE170147
+- **Huynh Ngoc Bao Khanh** - DE170163
+- **Phung Vu An Quan** - DE170262
 
-Sprites
-Sprite 1
+## Story
+*The Wizard Journey* follows the adventure of a wizard traveling through a mystical forest. The player's goal is to help the wizard collect magical items scattered throughout the forest. These items are crucial for unlocking access to new areas and progressing to the next levels. Along the way, the wizard must overcome various challenges and obstacles. The game emphasizes exploration and strategic collection of items to complete the journey.
 
-This is the sprite for the main character, a little wizard
-Sprite 2
-	
-		This is the sprite for enemy 1, green slime
-Sprite 3
+## Sprites
+1. **Main Character**: Sprite for the little wizard.
+2. **Enemy 1**: Green slime.
+3. **Enemy 2**: Orange slime.
+4. **Enemy 3**: Chainsaw. This enemy cannot be destroyed.
+5. **Map Layers**: Used to create map layers using TileMap.
+6. **Collectible Items**: Items that the wizard needs to collect to proceed to the next level before reaching the treasure.
+7. **Treasure**: Marks the finish of the wizard's journey.
+8. **Supporter**: Sprite for the wizard's supporter.
+9. **Additional Supporter**: Another supporter sprite for the main character.
 
-		This is the sprite for enemy 2, orange slime
-Sprite 4
+## Game Development: Requirements
 
-		This sprite is for enemy 3, chainsaw. This enemy cannot be destroyed.
-Sprite 5
+### Controls
+- Move left/right using the **arrow keys**.
+- **Jump** using the **space bar**.
 
-		
+### Game Over
+- Player loses 1 life when touching an enemy or falling on a spike.
+- Game ends when the player’s life count drops to 0, displaying the Game Over screen.
 
+### Animations and Collisions
+- The wizard has animations for movement, jumping, falling, and dying.
+- Colliders handle collisions between characters, layouts, and items.
 
-		These sprites are used to create map layers using TileMap
-Sprite 6
+### Score Display
+- Shows the score on the screen, updated when the player collects gold coins.
 
+### Code
+- Game logic is implemented in **C#**.
 
-	These sprites are items that the wizard - the main character, needs to collect to get to the next level before reaching the treasure.
-Sprite 7
+### Sound Effects
+- Background sounds for gameplay and interface actions.
+- Action sounds for jump, dash, coin collection, landing, and dying.
 
-		This sprite is the treasure, which marks the finish of the wizard's journey
-Game development: Requirements
-Input from the keyboard for controlling direction and acting
-- The player moves the wizard by using left and right arrows.
-- Jumping using Space from the keyboard. 
+## Additional Features
 
+### Character Upgrade
+- Players can collect bonuses to upgrade their character by purchasing items that add extra lives or energy tanks.
 
-There must be the end of the game (game over)
-- The player loses 1 life when touching an enemy or falling on a spike.
+### Scenes
+- Main gameplay scene and Game Over screen.
+- Additional scenes for different levels.
 
-- The game ends when the player’s life count drops to 0, and shows the Game Over screen.
+### Level Progression
+- Increasing number of items and enemies as levels progress, with faster and more challenging obstacles.
 
+### Random Events
+- Occasionally generates promotional items or enemies like power-ups and darts.
 
+### Character Customization
+- Collect bonuses to upgrade costumes and character appearance.
 
-There must be animations and collisions:
-- The wizard has animations when moving, jumping, falling or dying.
+### New Objects
+- New types of enemies and special items appear as the game progresses.
 
-- Use Collider to handle collisions between characters, layouts, and items in the middle of the match.
+### Sub-Objects
+- Enemies spawn fragments or sub-ammo when destroyed.
 
-There must be an illustration of the points
-- Shows the score on the screen and updates the score when the player collects gold coins
+### Storage System
+- Allows the player to store game points and health.
 
-		
-Sound:
-- Adds sounds for actions such as jumping, moving, eating gold coins, colliding with enemies, falling, and dying.
-C# Script:
-- All code for the game uses C#.
+## Extra Functions
 
-Different Scenes:
-- One main scene is for gameplay, and one is for the Game Over screen.
+### Equipment Store
+- Players can purchase items for character upgrades.
 
-- Multiple scenes can be added for different levels.
+### Web Deployment
+- Play the game online.
 
-Game Sound
-- Add background sound to the main game and actions that affect the interface such as clicking, dragging, …
+## Development Phases
 
+### Phase 1:
+- Main menu
+- Play Screen 1
+- Character control
 
-- Add sounds for actions like Jump, dash, collect coin,  landing and dying for the main character. 
+### Phase 2:
+- Play Screen 2
+- Game audio
 
+### Phase 3:
+- Storage system
+- Character interface
+- Web deployment
 
-
-
-
-
-
-Character Upgrade:
-- Players can collect bonuses to upgrade their characters by purchasing items that add extra lives or energy tanks.
-
-
-
-
-
-Different Scenes:
-- One main scene is for gameplay, and one is for the Game Over screen.
-
-- Multiple scenes can be added for different levels.
-
-
-
-
-
-
-Differential Level Change:
-- The number of items and enemies will increase, move faster and become harder to see as the game continues.
-
-
-- Change the rate of enemy surprise appearances.
-
-
-
-
-Differential Level Change: Developing feature
-- The number of items and enemies will increase, move faster and become harder to see as the game continues.
-- Change the rate of enemy surprise appearances.
-Random Promotions: Developing feature
-- Sometimes promotional items or messages appear, such as power-ups or extra lives.
-Character Upgrades: Developing feature
-- Players can collect bonuses to increase their speed, improve their health, or add more lives.
-Character Appearance Changes: Developing feature
-- Players can collect bonuses to upgrade their costumes.
-Character Appearance Changes: Developing feature
-- When upgrading, the wizard can change colour or add new accessories.
-Create New Objects in the Game: Developing feature
-- New types of enemies will appear as the game progresses.
-- Special items appear for players to collect.
-Create Sub-Objects in the Game: Developing feature
-- Enemies can spawn small fragments when destroyed, or spawn sub-ammo.
-Storage System: Developing feature
-- Uses PlayerPrefs to save the player's highest score and upgrades.
-- Allows the player to continue from where they left off in the previous game.
-Game development: extra functions
-Equipment store: Developing feature
-
-Future works: 
-Phrase 1:
-Main menu 
-Play Screen 1
- Character control
-Phrase 2:
-Play Screen 2
-Game Audio
-Storage system
-Character interface
-
-
-Appendix
-1. Github: https://github.com/PRUproject212/wizard-journey.git
-2. Contribution:
-Thái Đình Chinh : 35%
-Huỳnh Ngọc Bảo Khánh : 35%
-Phùng Vũ An Quân: 30%
+## Appendix
+1. **GitHub**: [Repository](https://github.com/PRUproject212/wizard-journey.git)
+2. **Play Link**: [The Wizard Journey on Itch.io](https://dinhchinh1304.itch.io/pruthewizardjourney)
+3. **Contribution**:
+   - Thai Dinh Chinh: 35%
+   - Huynh Ngoc Bao Khanh: 35%
+   - Phung Vu An Quan: 30%
