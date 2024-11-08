@@ -58,7 +58,9 @@ public class GameManager : Singleton<GameManager>
                 {
                     writer.Write(dataToStore);
                     Debug.Log("Game data saved.");
-                    Debug.Log(saveFilePath);
+                    Debug.Log("Coin: " + coin);
+                    Debug.Log("Health: " + health);
+                    Debug.Log("Fast: " + fast);
                 }
             }
         }
