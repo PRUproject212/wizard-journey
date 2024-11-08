@@ -73,6 +73,7 @@ public class UILevel1Controller : MonoBehaviour
         MenuButton.onClick.AddListener(() =>
         {
             Time.timeScale = 1f;
+            GameManager.Instance.ResetHealth();
             SceneManager.LoadScene(Scenes.MenuScene.ToString());
         });
 
@@ -95,7 +96,7 @@ public class UILevel1Controller : MonoBehaviour
 
     public void OnClickMenuButton(){
         Time.timeScale = 1f;
-        GameManager.Instance.ResetHealth();
+        Debug.Log("void onclickmenu");
         SceneManager.LoadScene(Scenes.MenuScene.ToString());
     }
 
